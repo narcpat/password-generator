@@ -1,15 +1,32 @@
-// Alert with password Criteria
+var randomizePassword = {
+  lower: getRandomLowerCaseChar,
+  upper: getRandomUpperCaseChar,
+  number: getRandomNumber,
+  symbol: getRandomSymbol,
+};
 
-// Prompt for password length
+// Generate random lower case letter
+var getRandomLowerCaseChar = function () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+};
 
-// Prompt for characters to be included
-// use upper characters?
+// Generate random Upper case letter
+var getRandomUpperCaseChar = function () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+};
 
-// use lower characters?
+// Generate random number
+var getRandomNumber = function () {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+};
 
-// use numbers?
+// Generate random symbols
+var getRandomSymbol = function () {
+  var symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  return symbols[Math.floor(Math.random() * symbols.length)];
+};
 
-// use special chararacters?
+console.log(getRandomSymbol());
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
