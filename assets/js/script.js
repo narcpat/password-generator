@@ -129,6 +129,7 @@ var selectCharType = function () {
     window.alert("There will be no UPPERCASE characters in your password.");
   }
 
+  //  ask if user wants to use numbers in their password
   var numberConfirm = window.confirm(
     "Would you like to use NUMBERS in your password?"
   );
@@ -139,6 +140,7 @@ var selectCharType = function () {
     window.alert("There will be no NUMBERS in your password.");
   }
 
+  // ask if user wants to use special characters in their password
   var symbolConfirm = window.confirm(
     "Would you like to use SPECIAL CHARACTERS in your password?"
   );
@@ -147,6 +149,7 @@ var selectCharType = function () {
     window.alert("Your password will include SPECIAL CHARACTERS");
   }
 
+  // make sure user selects at least one character type
   if (
     upperConfirm === false &&
     lowerConfirm === false &&
@@ -157,6 +160,7 @@ var selectCharType = function () {
     return null;
   }
 
+  // to select character types and length of password
   var optionsSelect = {
     length: promptSelectCharCount,
     lower: lowerConfirm,
@@ -167,7 +171,7 @@ var selectCharType = function () {
   return optionsSelect;
 };
 
-// TODO 4 - when all prompts are answered, a password should be generated. The password can be displayed in an alert or written on the page.
+// get and generate characters for password from character arrays
 var getRandomChar = function (array) {
   var index = Math.floor(Math.random() * array.length);
 
